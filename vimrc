@@ -35,9 +35,9 @@ set smartcase
 set wildignore+=*.o,*.obj,*.pyc,*.pdf,*.so,*.hi,*swp,*/build/*,*.git/*,CMakeLists\.txt\.*
 
 " Auto-reload vimrc {{{1
-if has('autocmd')
-    autocmd bufwritepost vimrc source $MYVIMRC
-endif
+" if has('autocmd')
+"     autocmd bufwritepost vimrc source $MYVIMRC
+" endif
 
 " Plugins {{{1
 
