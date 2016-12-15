@@ -143,6 +143,10 @@ hi NonText ctermfg=237 guifg=#3F3F3F
 " really pop). We'll fix prepending SpecialKeys with indent_guides later
 hi SpecialKey ctermfg=237 guifg=#3F3F3F
 
+" Page Width {{{1
+execute "set colorcolumn=" . join(range(81,82), '|')
+hi ColorColumn ctermfg=237 guifg=#3F3F3F
+
 " Cursor {{{1
 function! HighlightLine()
     hi CursorLine ctermbg=235 cterm=None guibg=#3F3F3F
