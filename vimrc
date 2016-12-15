@@ -41,11 +41,17 @@ endif
 
 " Plugins {{{1
 
+
 if has('gui_running')
-    execute plug#begin('~/vimfiles/plugged')
+    let g:vim_dir='~/vimfiles'
 else
-    execute plug#begin('~/.vim/plugged')
+    " Enable colors for terminal mode
+    set t_Co=16
+
+    let g:vim_dir='~/.vim')
 endif
+
+execute plug#begin(g:vim_dir . '/plugged')
 
 " General {{{2
 
@@ -105,7 +111,7 @@ execute plug#end()
 let NERDTreeIgnore = ["\.pyc", "\.so$", "\.a$", "build/*", "CMakeLists\.txt\..*"]
 let NERDTreeShowHidden=1
 
-let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/UltiSnips", $HOME."/.UltiSnips"]
+let g:UltiSnipsSnippetDirectories=[g:vim_dir."/UltiSnips", $HOME."/.UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -122,11 +128,6 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 " Theme {{{1
-if has('gui_running') == 0
-    " Enable colors for terminal mode
-    set t_Co=16
-endif
-
 syntax enable
 set background=dark
 colorscheme koehler
