@@ -144,6 +144,9 @@ hi NonText ctermfg=237 guifg=#3F3F3F
 " really pop). We'll fix prepending SpecialKeys with indent_guides later
 hi SpecialKey ctermfg=237 guifg=#3F3F3F
 
+" Make Visual use the same highlight colors as CursorLine
+hi! link Visual CursorLine
+
 " Page Width {{{1
 execute "set colorcolumn=" . join(range(81,82), '|')
 hi ColorColumn ctermfg=237 guifg=#3F3F3F
