@@ -1,8 +1,20 @@
 " vim: foldmethod=marker
 
+" General stuff/one-offs {{{1
 set encoding=utf-8
 set number
 set foldcolumn=1
+set showcmd " show incomplete portion of cmd eg. 100gg
+
+" Swap files {{{1
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Searching {{{1
+set hlsearch
+set showmatch
+set incsearch
 
 " Sane tabs {{{1
 set tabstop=4
@@ -14,6 +26,18 @@ set showbreak=...
 set modeline
 set modelines=5
 set backspace=indent,eol,start
+
+" Auto completion {{{1
+set wildmenu
+set wildmode=list:longest,full
+set ignorecase
+set smartcase
+set wildignore+=*.o,*.obj,*.pyc,*.pdf,*.so,*.hi,*swp,*/build/*,*.git/*,CMakeLists\.txt\.*
+
+" Auto-reload vimrc {{{1
+if has('autocmd')
+    autocmd bufwritepost vimrc source $MYVIMRC
+endif
 
 " Plugins {{{1
 execute plug#begin('~/vimfiles/plugged')
@@ -72,13 +96,47 @@ Plug 'https://github.com/klen/python-mode.git', { 'for': 'python' }
 
 execute plug#end()
 
+" Plugin Settings {{{1
+let NERDTreeIgnore = ["\.pyc", "\.so$", "\.a$", "build/*", "CMakeLists\.txt\..*"]
+let NERDTreeShowHidden=1
+
+let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/UltiSnips", $HOME."/.UltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234 ctermfg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 ctermfg=240
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
 " Theme {{{1
+if has('gui_running') == 0
+    " Enable colors for terminal mode
+    set t_Co=16
+endif
+
+syntax enable
+set background=dark
 colorscheme koehler
 let g:airline_powerline_fonts=1
 set laststatus=2
-hi Folded ctermbg=237 cterm=None guibg=#1F1F1F guifg=#F787FF
-hi FoldColumn ctermbg=black cterm=None guibg=black guifg=#F787FF
-"hi FoldColumn ctermbg=235 cterm=None guibg=#3F3F3F guifg=#999999
+hi Folded ctermbg=234 ctermfg=213 guibg=#1F1F1F guifg=#F787FF
+hi FoldColumn ctermbg=0 ctermfg=213 guibg=black guifg=#F787FF
+
+set listchars=tab:\>\ ,eol:$,trail:~
+set list
+hi NonText ctermfg=237 guifg=#3F3F3F
+
+" Set all SpecialKey colors to yellow on red (to get trailing whitespace to
+" really pop). We'll fix prepending SpecialKeys with indent_guides later
+hi SpecialKey ctermfg=237 guifg=#3F3F3F
 
 " Cursor {{{1
 function! HighlightLine()
@@ -91,7 +149,7 @@ endfunction
 
 au InsertEnter * call HighlightLine()
 au InsertLeave * call UnHighlightLine()
-set cul
+set cursorline
 call UnHighlightLine()
 set concealcursor=inv
 set conceallevel=2
