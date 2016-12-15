@@ -40,7 +40,12 @@ if has('autocmd')
 endif
 
 " Plugins {{{1
-execute plug#begin('~/vimfiles/plugged')
+
+if has('gui_running')
+    execute plug#begin('~/vimfiles/plugged')
+else
+    execute plug#begin('~/.vim/plugged')
+endif
 
 " General {{{2
 
