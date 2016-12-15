@@ -43,12 +43,12 @@ endif
 
 
 if has('gui_running')
-    let g:vim_dir='~/vimfiles'
+    let g:vim_dir=$HOME.'/vimfiles'
 else
     " Enable colors for terminal mode
     set t_Co=16
 
-    let g:vim_dir='~/.vim')
+    let g:vim_dir=$HOME.'/.vim'
 endif
 
 execute plug#begin(g:vim_dir . '/plugged')
