@@ -5,6 +5,7 @@ set encoding=utf-8
 set number
 set foldcolumn=1
 set showcmd " show incomplete portion of cmd eg. 100gg
+set scrolloff=999
 
 " Swap files {{{1
 set noswapfile
