@@ -132,11 +132,16 @@ let g:cpp_experimental_template_highlight = 1
 syntax enable
 set background=dark
 colorscheme koehler
+
+" airline statusbar
 let g:airline_powerline_fonts=1
 set laststatus=2
+
+" Folds
 hi Folded ctermbg=234 ctermfg=213 guibg=#1F1F1F guifg=#F787FF
 hi FoldColumn ctermbg=0 ctermfg=213 guibg=black guifg=#F787FF
 
+" Show whitespace characters
 set listchars=tab:\>\ ,eol:$,trail:~
 set list
 hi NonText ctermfg=237 guifg=#3F3F3F
