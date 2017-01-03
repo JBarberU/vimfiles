@@ -198,3 +198,9 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap ,p :CtrlP<CR>
 nnoremap ,,p :CtrlPClearAllCaches<CR>
 
+" Run current python script with venv
+if has('gui_running')
+    nnoremap <silent> ,,r :w !call venv\Scripts\activate.bat & python -<CR><CR>
+else
+    nnoremap <silent> ,,r :w !source venv/bin/activate && python -<CR><CR>
+endif
