@@ -128,6 +128,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 ctermfg=240
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope = 0
+
 " Theme {{{1
 syntax enable
 set background=dark
