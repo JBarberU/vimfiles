@@ -131,6 +131,10 @@ let g:cpp_experimental_template_highlight = 1
 let g:pymode_rope_autoimport = 0
 let g:pymode_rope = 0
 
+if has("unix")
+    let g:clang_library_path="/usr/lib/llvm-3.5/lib/"
+endif
+
 " Theme {{{1
 syntax enable
 set background=dark
