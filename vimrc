@@ -208,3 +208,8 @@ if has('gui_running')
 else
     nnoremap <silent> ,,r :w !source venv/bin/activate && python -<CR><CR>
 endif
+
+let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
+if filereadable(g:secret_vimrc)
+    execute 'source ' . g:secret_vimrc
+endif
