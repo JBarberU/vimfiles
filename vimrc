@@ -196,7 +196,7 @@ inoremap <C-l> <ESC>
 let mapleader=","
 nnoremap <silent> ,/ :nohlsearch<CR>
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
-nnoremap <c-c> :q<CR>
+"nnoremap <c-c> :q<CR>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap ,p :CtrlP<CR>
