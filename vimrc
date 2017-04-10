@@ -213,3 +213,5 @@ let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
 if filereadable(g:secret_vimrc)
     execute 'source ' . g:secret_vimrc
 endif
+
+nnoremap ,ref yiw:%s/<C-r>0//gc<left><left><left>
