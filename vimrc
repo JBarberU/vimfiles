@@ -56,55 +56,55 @@ execute plug#begin(g:vim_dir . '/plugged')
 
 " General {{{2
 
-Plug 'https://github.com/powerline/fonts.git'
-Plug 'https://github.com/Lokaltog/vim-easymotion.git'
-Plug 'https://github.com/docunext/closetag.vim.git'
-Plug 'https://github.com/scrooloose/syntastic.git'
-Plug 'https://github.com/JBarberU/vim-diffsaved.git'
-Plug 'https://github.com/scrooloose/nerdcommenter.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/tmhedberg/SimpylFold'
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
-Plug 'https://github.com/SirVer/ultisnips.git'
-Plug 'https://github.com/vim-scripts/upAndDown' " Move code blocks  
-Plug 'https://github.com/tpope/vim-abolish.git' " Smarter substitution
-Plug 'https://github.com/godlygeek/tabular.git' " Text alignment
-Plug 'https://github.com/tpope/vim-fugitive.git' " Git
-Plug 'https://github.com/nelstrom/vim-visual-star-search.git' " Ability to search from visual selection with * or #
-Plug 'https://github.com/JBarberU/vim-local.git' " Load .vimrc_local
+Plug 'powerline/fonts'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'docunext/closetag.vim'
+Plug 'scrooloose/syntastic'
+Plug 'JBarberU/vim-diffsaved'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'SirVer/ultisnips'
+Plug 'vim-scripts/upAndDown' " Move code blocks
+Plug 'tpope/vim-abolish' " Smarter substitution
+Plug 'godlygeek/tabular' " Text alignment
+Plug 'tpope/vim-fugitive' " Git
+Plug 'nelstrom/vim-visual-star-search' " Ability to search from visual selection with * or #
+Plug 'JBarberU/vim-local' " Load .vimrc_local
 
-Plug 'https://github.com/scrooloose/nerdtree.git', { 'on': 'NERDTreeToggle' }
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git', { 'on': ['CtrlP', 'CtrlPClearAllCaches'] }
-Plug 'https://github.com/JBarberU/xterm-color-table.vim.git', { 'on': 'XtermColorTable' }
-Plug 'https://github.com/mileszs/ack.vim.git', { 'on': 'Ack' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPClearAllCaches'] }
+Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
 " Haskell {{{2
-Plug 'https://github.com/lukerandall/haskellmode-vim.git', { 'for': 'haskell' }
-Plug 'https://github.com/eagletmt/ghcmod-vim.git', { 'for': 'haskell' }
-Plug 'https://github.com/wlangstroth/vim-haskell.git', { 'for': 'haskell' }
-Plug 'https://github.com/dag/vim2hs.git', { 'for': 'haskell' }
+Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
+Plug 'dag/vim2hs', { 'for': 'haskell' }
 
 " C++ {{{2
-Plug 'https://github.com/Rip-Rip/clang_complete.git', { 'for': 'cpp' }
-Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git', { 'for': 'cpp' }
-Plug 'https://github.com/vim-scripts/c.vim.git', { 'for': 'cpp' }
+Plug 'Rip-Rip/clang_complete', { 'for': 'cpp' }
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+Plug 'vim-scripts/c.vim', { 'for': 'cpp' }
 " 	# Jump between hpp/cpp
-Plug 'https://github.com/vim-scripts/a.vim', { 'for': 'cpp' }
+Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
 " 	HTML {{{2
-Plug 'https://github.com/pbrisbin/html-template-syntax.git', { 'for': 'html' }
+Plug 'pbrisbin/html-template-syntax', { 'for': 'html' }
 
 " 	Markdown {{{2
-Plug 'https://github.com/tpope/vim-markdown.git', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " 	Rust {{{2
-Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " 	Python {{{2
-Plug 'https://github.com/davidhalter/jedi-vim.git', { 'for': 'python' }
-Plug 'https://github.com/klen/python-mode.git', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'klen/python-mode', { 'for': 'python' }
 
 execute plug#end()
 
