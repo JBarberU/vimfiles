@@ -181,6 +181,12 @@ set concealcursor=inv
 set conceallevel=2
 set nostartofline
 
+" Custom commands {{{1
+
+command! EditVimrc :tabedit $MYVIMRC
+command! EditGVimrc :tabedit $MYGVIMRC
+command! SourceVimrc :source $MYVIMRC
+
 " Keyboard shortcuts {{{1
 noremap <up>    <nop>
 noremap <down>  <nop>
@@ -196,7 +202,10 @@ inoremap <C-l> <ESC>
 let mapleader=","
 nnoremap <silent> ,/ :nohlsearch<CR>
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
-"nnoremap <c-c> :q<CR>
+
+" Copy/paste into/from system clipboard
+nnoremap <c-c> "*
+vnoremap <c-c> "*
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap ,p :CtrlP<CR>
@@ -214,4 +223,12 @@ if filereadable(g:secret_vimrc)
     execute 'source ' . g:secret_vimrc
 endif
 
+" Tab edits
+nnoremap <C-w><C-t> :tabnew<CR>
+nnoremap <C-w><C-e> :tabedit<SPACE>
+
+" Open and editing vimrc
+nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
+
+" Refactor word under cursor
 nnoremap ,ref yiw:%s/<C-r>0//gc<left><left><left>
