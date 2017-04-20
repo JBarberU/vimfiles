@@ -185,6 +185,11 @@ set nostartofline
 command! EditVimrc :tabedit $MYVIMRC
 command! EditGVimrc :tabedit $MYGVIMRC
 command! SourceVimrc :source $MYVIMRC
+if has("unix")
+    command! MakeTags !ctags.exe -R .
+else
+    command! MakeTags !ctags -R .
+endif
 
 " Keyboard shortcuts {{{1
 noremap <up>    <nop>
