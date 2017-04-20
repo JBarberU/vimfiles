@@ -225,6 +225,7 @@ endif
 
 " Tab edits
 nnoremap <C-w><C-t> :tabnew<CR>
+nnoremap <C-w><C-p> :tabnew<CR>:file unsaved_buffer.py<CR>:filetype detect<CR>
 nnoremap <C-w><C-e> :tabedit<SPACE>
 
 " Open and editing vimrc
