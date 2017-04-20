@@ -73,7 +73,6 @@ Plug 'vim-scripts/upAndDown' " Move code blocks
 Plug 'tpope/vim-abolish' " Smarter substitution
 Plug 'godlygeek/tabular' " Text alignment
 Plug 'tpope/vim-fugitive' " Git
-Plug 'nelstrom/vim-visual-star-search' " Ability to search from visual selection with * or #
 Plug 'JBarberU/vim-local' " Load .vimrc_local
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -233,3 +232,5 @@ nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
 
 " Refactor word under cursor
 nnoremap ,ref yiw:%s/<C-r>0//gc<left><left><left>
+
+nnoremap <silent> * :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
