@@ -204,7 +204,7 @@ inoremap <right> <nop>
 
 inoremap <C-l> <ESC>
 let mapleader=","
-nnoremap <silent> ,/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 
 " Copy/paste into/from system clipboard
@@ -217,9 +217,9 @@ nnoremap <leader><leader>p :b<space>
 
 " Run current python script with venv
 if has('gui_running')
-    nnoremap <silent> ,,r :w !call venv\Scripts\activate.bat & python -<CR><CR>
+        nnoremap <silent> <leader><leader>r :w !call venv\Scripts\activate.bat & python -<CR><CR>
 else
-    nnoremap ,,r :w !source venv/bin/activate && python -<CR>
+    nnoremap <leader><leader>r :w !source venv/bin/activate && python -<CR>
 endif
 
 let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
@@ -236,6 +236,6 @@ nnoremap <C-w><C-e> :tabedit<SPACE>
 nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
 
 " Refactor word under cursor
-nnoremap ,ref yiw:%s/<C-r>0//gc<left><left><left>
+nnoremap <leader>ref yiw:%s/<C-r>0//gc<left><left><left>
 
 nnoremap <silent> * :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
