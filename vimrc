@@ -6,6 +6,7 @@ set number
 set foldcolumn=1
 set showcmd " show incomplete portion of cmd eg. 100gg
 set scrolloff=999
+set path+=**
 
 " Swap files {{{1
 set noswapfile
@@ -76,7 +77,6 @@ Plug 'nelstrom/vim-visual-star-search' " Ability to search from visual selection
 Plug 'JBarberU/vim-local' " Load .vimrc_local
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPClearAllCaches'] }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
@@ -208,8 +208,8 @@ nnoremap <c-c> "*
 vnoremap <c-c> "*
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap ,p :CtrlP<CR>
-nnoremap ,,p :CtrlPClearAllCaches<CR>
+nnoremap <leader>p :find<space>
+nnoremap <leader><leader>p :b<space>
 
 " Run current python script with venv
 if has('gui_running')
