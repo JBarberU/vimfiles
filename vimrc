@@ -236,6 +236,6 @@ nnoremap <C-w><C-e> :tabedit<SPACE>
 nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
 
 " Refactor word under cursor
-nnoremap <leader>ref yiw:%s/<C-r>0//gc<left><left><left>
+nnoremap <leader>ref :%s/<C-r><C-w>//gc<left><left><left>
 
 nnoremap <silent> * :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
