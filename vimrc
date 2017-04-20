@@ -238,4 +238,5 @@ nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
 " Refactor word under cursor
 nnoremap <leader>ref :%s/<C-r><C-w>//gc<left><left><left>
 
-nnoremap <silent> * :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
+" Send current word to hlsearch
+nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
