@@ -45,7 +45,7 @@ snippet fst "Create format-string"
 endsnippet
 
 snippet pfst "Create format-string" 
-print '${1:string}'.format(${2:variables})
+print('${1:string}'.format(${2:variables}))
 endsnippet
 
 snippet asp "Addend relative path to sys.path"
@@ -190,7 +190,8 @@ finally:
 endsnippet
 
 snippet _ "__magic__"
-__${1:init}__
+def __${1:str}__(self$2):
+	${3:${VISUAL:pass}}
 endsnippet
 
 snippet _i "__init__"
@@ -204,7 +205,9 @@ endsnippet
 
 snippet glog "Get logging.logger"
 import logging
-logging.basicConfig(format='%(asctime)s (%(threadName)s) %(levelname)s: %(message)s')
+logging.basicConfig(
+	format='%(asctime)s (%(threadName)s) %(levelname)s: %(message)s'
+)
 logger = logging.getLogger(${0:__name__})
 logger.setLevel(logging.INFO)
 endsnippet
@@ -240,4 +243,10 @@ endsnippet
 snippet ifut "Import default stuff from __future__"
 from __future__ import division, generators, nested_scopes, print_function
 from __future__ import unicode_literals, with_statement
+endsnippet
+
+snippet slot "Creates a Qt Slot"
+@Slot($1)
+def $2(self$3):
+	${4:${VISUAL:pass}}
 endsnippet

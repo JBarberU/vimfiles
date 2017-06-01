@@ -128,6 +128,7 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 let g:pymode_rope_autoimport = 0
+let g:pymode_options_colorcolumn = 0
 let g:pymode_rope = 0
 
 if has("unix")
@@ -160,8 +161,10 @@ hi SpecialKey ctermfg=237 guifg=#3F3F3F
 hi! link Visual CursorLine
 
 " Page Width {{{1
-execute "set colorcolumn=" . join(range(81,82), '|')
-hi ColorColumn ctermfg=237 guifg=#3F3F3F
+hi ColorColumn ctermbg=200 guibg=#ff00df
+call matchadd('ColorColumn', '\%81v', 100)
+
+hi Search term=reverse ctermfg=15 ctermbg=2 guifg=white guibg=#008000
 
 " Cursor {{{1
 function! HighlightLine()
@@ -190,6 +193,8 @@ if has("unix")
 else
     command! MakeTags !ctags -R .
 endif
+
+command! Cheat execute 'tabedit '.g:vim_dir.'/cheat.md'
 
 " Keyboard shortcuts {{{1
 noremap <up>    <nop>
@@ -240,9 +245,3 @@ nnoremap <leader>ref :%s/<C-r><C-w>//gc<left><left><left>
 
 " Send current word to hlsearch
 nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
-
-" AutoPairs
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap " ""<ESC>i
