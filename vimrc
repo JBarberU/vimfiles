@@ -74,6 +74,7 @@ Plug 'tpope/vim-abolish' " Smarter substitution
 Plug 'godlygeek/tabular' " Text alignment
 Plug 'tpope/vim-fugitive' " Git
 Plug 'JBarberU/vim-local' " Load .vimrc_local
+Plug 'morhetz/gruvbox' "color theme
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
@@ -138,7 +139,7 @@ endif
 " Theme {{{1
 syntax enable
 set background=dark
-colorscheme koehler
+colorscheme gruvbox
 
 " airline statusbar
 let g:airline_powerline_fonts=1
@@ -163,8 +164,6 @@ hi! link Visual CursorLine
 " Page Width {{{1
 hi ColorColumn ctermbg=200 guibg=#ff00df
 call matchadd('ColorColumn', '\%81v', 100)
-
-hi Search term=reverse ctermfg=15 ctermbg=2 guifg=white guibg=#008000
 
 " Cursor {{{1
 function! HighlightLine()
