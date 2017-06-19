@@ -159,7 +159,7 @@ hi NonText ctermfg=237 guifg=#3F3F3F
 hi SpecialKey ctermfg=237 guifg=#3F3F3F
 
 " Make Visual use the same highlight colors as CursorLine
-hi! link Visual CursorLine
+" hi! link Visual CursorLine
 
 " Page Width {{{1
 hi ColorColumn ctermbg=200 guibg=#ff00df
@@ -167,11 +167,11 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Cursor {{{1
 function! HighlightLine()
-    hi CursorLine ctermbg=235 cterm=None guibg=#3F3F3F
+    hi CursorLine ctermbg=238 cterm=None guibg=#444444
 endfunction
 
 function! UnHighlightLine()
-    hi CursorLine ctermbg=235 cterm=None guibg=#2F2F2F
+    hi CursorLine ctermbg=237 cterm=None guibg=#3a3a3a
 endfunction
 
 au InsertEnter * call HighlightLine()
