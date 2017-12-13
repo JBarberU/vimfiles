@@ -93,6 +93,9 @@ Plug 'vim-scripts/c.vim', { 'for': 'cpp' }
 " 	# Jump between hpp/cpp
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
+" GLSL {{{2
+Plug 'beyondmarc/glsl.vim'
+
 " 	HTML {{{2
 Plug 'pbrisbin/html-template-syntax', { 'for': 'html' }
 
