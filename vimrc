@@ -226,7 +226,7 @@ nnoremap <leader><leader>p :b<space>
 if has('gui_running')
         nnoremap <silent> <leader><leader>r :w !call venv\Scripts\activate.bat & python -<CR><CR>
 else
-    nnoremap <leader><leader>r :w !source venv/bin/activate && python -<CR>
+    nnoremap <leader><leader>r :w !source venv/bin/activate; python -<CR>
 endif
 
 let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
