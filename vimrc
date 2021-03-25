@@ -222,13 +222,6 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>p :find<space>
 nnoremap <leader><leader>p :b<space>
 
-" Run current python script with venv
-if has('gui_running')
-        nnoremap <silent> <leader><leader>r :w !call venv\Scripts\activate.bat & python -<CR><CR>
-else
-    nnoremap <leader><leader>r :w !source venv/bin/activate; python -<CR>
-endif
-
 let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
 if filereadable(g:secret_vimrc)
     execute 'source ' . g:secret_vimrc
