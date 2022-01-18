@@ -142,7 +142,7 @@ endif
 " Theme {{{1
 syntax enable
 set background=dark
-colorscheme gruvbox
+colorscheme koehler
 
 " airline statusbar
 let g:airline_powerline_fonts=1
