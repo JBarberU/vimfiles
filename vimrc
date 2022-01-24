@@ -7,6 +7,8 @@ set foldcolumn=1
 set showcmd " show incomplete portion of cmd eg. 100gg
 set scrolloff=999
 set path+=**
+let g:netrw_dirhistmax=0
+
 
 " Swap files {{{1
 set noswapfile
