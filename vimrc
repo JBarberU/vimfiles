@@ -75,6 +75,7 @@ Plug 'godlygeek/tabular' " Text alignment
 Plug 'tpope/vim-fugitive' " Git
 Plug 'JBarberU/vim-local' " Load .vimrc_local
 Plug 'morhetz/gruvbox' "color theme
+Plug 'lambdalisue/suda.vim' "fix for w '!sudo tee %' not working in neovim
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
