@@ -74,11 +74,14 @@ Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/upAndDown' " Move code blocks
 Plug 'tpope/vim-abolish' " Smarter substitution
 Plug 'godlygeek/tabular' " Text alignment
-Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-fugitive' "Git for status bar
+Plug 'airblade/vim-gitgutter' " Git in editor
 Plug 'JBarberU/vim-local' " Load .vimrc_local
 Plug 'morhetz/gruvbox' "color theme
 Plug 'lambdalisue/suda.vim' "fix for w '!sudo tee %' not working in neovim
 Plug 'edkolev/tmuxline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' "fuzzy finding of files
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
@@ -223,7 +226,7 @@ nnoremap <c-c> "*
 vnoremap <c-c> "*
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>p :find<space>
+nnoremap <leader>p :Files<CR>
 nnoremap <leader><leader>p :b<space>
 
 let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
