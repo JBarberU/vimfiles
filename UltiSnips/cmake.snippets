@@ -7,7 +7,11 @@ set(SRC
 	$3
 )
 
-set(CMAKE_CXX_FLAGS "\${CMAKE_CXX_FLAGS} -std=${4:c++14}")
+set(HEADERS
+	$4
+)
 
-add_executable(\${CMAKE_PROJECT_NAME} \${SRC})
+set(CMAKE_CXX_FLAGS "\${CMAKE_CXX_FLAGS} -std=${5:c++14}")
+
+add_executable(\${CMAKE_PROJECT_NAME} \${SRC} \${HEADERS})
 endsnippet
