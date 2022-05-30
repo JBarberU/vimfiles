@@ -1,3 +1,25 @@
+snippet new_header
+#pragma once
+
+namespace $1
+{
+class $2
+{
+public:
+    $3
+};
+}
+endsnippet
+
+snippet new_cpp
+#include "$1"
+
+namespace $2
+{
+$3
+}
+endsnippet
+
 snippet inc "Include statement"
 #include <$1>
 endsnippet
