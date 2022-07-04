@@ -3,6 +3,10 @@ snippet #! "Hashbang!"
 # -*- coding: utf-8 -*-
 endsnippet
 
+snippet fmt "Creates a format string"
+$1f'$2'$3
+endsnippet
+
 snippet def "Create function"
 def $1($2):
 	${0:${VISUAL:pass}}
@@ -14,9 +18,9 @@ def $1(self$2):
 endsnippet
 
 snippet ifm "Creates if __name__ == __main__"
-
 def main(args):
 	${0:${VISUAL:pass}}
+
 
 if __name__ == '__main__':
 	import sys
@@ -54,6 +58,15 @@ import os
 ${1:p} = '{0}/${2:relative_path}'.format(os.path.realpath(os.path.dirname(__file__)))
 if $1 not in sys.path:
 	sys.path.append($1)
+endsnippet
+
+snippet lib "Add relative library path"
+from sys import path as sys_path
+from os import path as os_path
+
+repo_path = os_path.realpath(os_path.dirname(__file__))
+if repo_path not in sys_path:
+    sys_path.append(repo_path)
 endsnippet
 
 snippet for "Iterate over the given iterable"
@@ -209,6 +222,11 @@ snippet pdb "Python debugger"
 pdb.set_trace()
 endsnippet
 
+snippet ipdb "Import Python debugger and set trace"
+import pdb
+pdb.set_trace()
+endsnippet
+
 snippet glog "Get logging.logger"
 import logging
 logging.basicConfig(
@@ -251,8 +269,19 @@ from __future__ import division, generators, nested_scopes, print_function
 from __future__ import unicode_literals, with_statement
 endsnippet
 
+snippet qtclass "Creates a Qt Subclass"
+class $1(${2:${VISUAL:QWidget}}):
+
+    def __init__(self, parent=None):
+        super($1, self).__init__(parent)
+endsnippet
+
 snippet slot "Creates a Qt Slot"
 @Slot($1)
 def $2(self$3):
 	${4:${VISUAL:pass}}
+endsnippet
+
+snippet s. "Saves typing out self."
+self.$1
 endsnippet

@@ -240,7 +240,7 @@ nnoremap <C-w><C-p> :tabnew<CR>:file unsaved_buffer.py<CR>:filetype detect<CR>
 nnoremap <C-w><C-e> :tabedit<SPACE>
 
 " Open and editing vimrc
-nnoremap <C-w><C-v> :tabedit $MYVIMRC<CR>
+nnoremap <C-w><C-r> :tabedit $MYVIMRC<CR>
 
 " Refactor word under cursor
 nnoremap <leader>ref :%s/<C-r><C-w>//gc<left><left><left>
