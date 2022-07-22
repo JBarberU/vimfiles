@@ -212,7 +212,7 @@ def __init__(self$1):
 	${2:${VISUAL:pass}}
 endsnippet
 
-snippet _cls "@classmethod"
+snippet clsm "@classmethod"
 @classmethod
 def ${1}(cls${2}):
 	${3:${VISUAL:pass}}
@@ -274,6 +274,26 @@ class $1(${2:${VISUAL:QWidget}}):
 
     def __init__(self, parent=None):
         super($1, self).__init__(parent)
+endsnippet
+
+snippet law "Add widget to layout"
+${1:${VISUAL:layout}}.addWidget($2)
+endsnippet
+
+snippet lal "Add layout to layout"
+${1:${VISUAL:layout}}.addLayout($2)
+endsnippet
+
+snippet lar "Add row to form layout"
+${1:${VISUAL:layout}}.addRow($2, $3)
+endsnippet
+
+snippet icls "Creates a python class"
+class $1($2):
+
+	def __init__(self$3):
+		super($1, self).__init__($4)
+
 endsnippet
 
 snippet slot "Creates a Qt Slot"
