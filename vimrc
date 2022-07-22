@@ -87,6 +87,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
+" JSON {{{2
+Plug 'elzr/vim-json', { 'for': 'json' }
+
 " Haskell {{{2
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
