@@ -117,7 +117,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " 	Python {{{2
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'python-mode/python-mode', { 'for': 'python' }
 
 execute plug#end()
 
