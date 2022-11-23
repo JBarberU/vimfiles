@@ -36,7 +36,7 @@ set wildmenu
 set wildmode=list:longest,full
 set ignorecase
 set smartcase
-set wildignore+=*.o,*.obj,*.pyc,*.pdf,*.so,*.hi,*swp,*/build/*,*.git/*,CMakeLists\.txt\.*
+set wildignore+=*.o,*.obj,*.pyc,*.pdf,*.so,*.hi,*swp,*.git/*
 
 " Auto-reload vimrc {{{1
 " if has('autocmd')
@@ -82,6 +82,7 @@ Plug 'lambdalisue/suda.vim' "fix for w '!sudo tee %' not working in neovim
 Plug 'edkolev/tmuxline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
+Plug 'ilyachur/cmake4vim',
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
@@ -97,7 +98,8 @@ Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
 
 " C++ {{{2
-Plug 'Rip-Rip/clang_complete', { 'for': 'cpp' }
+Plug 'ycm-core/YouCompleteMe', { 'for': 'cpp' }
+"Plug 'Rip-Rip/clang_complete', { 'for': 'cpp' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'vim-scripts/c.vim', { 'for': 'cpp' }
 " 	# Jump between hpp/cpp
@@ -122,7 +124,7 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 execute plug#end()
 
 " Plugin Settings {{{1
-let NERDTreeIgnore = ["\.pyc", "\.so$", "\.a$", "build/*", "CMakeLists\.txt\..*"]
+let NERDTreeIgnore = ["\.pyc", "\.so$", "\.a$"]
 let NERDTreeShowHidden=1
 
 let g:UltiSnipsSnippetDirectories=[g:vim_dir."/UltiSnips", $HOME."/.UltiSnips"]
@@ -145,9 +147,18 @@ let g:pymode_rope_autoimport = 0
 let g:pymode_options_colorcolumn = 0
 let g:pymode_rope = 0
 
+let g:jedi#force_py_version = 3
+
 if has("unix")
-    let g:clang_library_path="/usr/lib/llvm-3.5/lib/"
+    let g:clang_library_path="/usr/lib/llvm/lib/"
 endif
+
+" cmake4vim
+let g:cmake_compile_commands = 1
+let g:cmake_compile_commands_link = './'
+let g:cmake_build_dir_prefix = 'build/'
+let g:cmake_reload_after_save = 1
+let g:make_arguments = '-j'
 
 " Theme {{{1
 syntax enable
@@ -246,7 +257,16 @@ nnoremap <C-w><C-e> :tabedit<SPACE>
 nnoremap <C-w><C-r> :tabedit $MYVIMRC<CR>
 
 " Refactor word under cursor
-nnoremap <leader>ref :%s/<C-r><C-w>//gc<left><left><left>
+nnoremap <leader><C-r> :%s/<C-r><C-w>//gc<left><left><left>
 
 " Send current word to hlsearch
 nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
+
+" Ycm shortcuts
+nnoremap <F2> :YcmCompleter GoTo<CR>
+
+" cmake4vim shortcuts
+nnoremap <leader>T :FZFCMakeSelectTarget<CR>
+nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
+nnoremap <leader>B :CMakeBuild<CR>
+nnoremap <leader>R :CMakeRun<CR>
