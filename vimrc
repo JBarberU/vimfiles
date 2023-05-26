@@ -126,7 +126,7 @@ Plug 'python-mode/python-mode', { 'for': 'python' }
 execute plug#end()
 
 " Plugin Settings {{{1
-let NERDTreeIgnore = ["\.pyc", "\.so$", "\.a$"]
+let NERDTreeIgnore = ['\.pyc', '\.so$', '\.a$']
 let NERDTreeShowHidden=1
 
 let g:UltiSnipsSnippetDirectories=[g:vim_dir."/UltiSnips", $HOME."/.UltiSnips"]
