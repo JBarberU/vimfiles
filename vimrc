@@ -82,9 +82,11 @@ Plug 'lambdalisue/suda.vim' "fix for w '!sudo tee %' not working in neovim
 Plug 'edkolev/tmuxline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
-Plug 'ilyachur/cmake4vim',
+Plug 'ilyachur/cmake4vim'
+Plug 'markonm/traces.vim' "preview text replacement with :s and friends
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
