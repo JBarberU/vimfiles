@@ -238,8 +238,7 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 
 " Copy/paste into/from system clipboard
-nnoremap <c-c> "*
-vnoremap <c-c> "*
+set clipboard=unnamed,unnamedplus
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>p :Files<CR>
