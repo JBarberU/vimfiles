@@ -271,3 +271,11 @@ nnoremap <leader>T :FZFCMakeSelectTarget<CR>
 nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
 nnoremap <leader>B :CMakeBuild<CR>
 nnoremap <leader>R :CMakeRun<CR>
+
+" Maintain visual mode after shifting indentation
+vmap < <gv
+vmap > >gv
+
+" Center screen when searching
+nnoremap n nzzzv
+nnoremap N Nzzzv
