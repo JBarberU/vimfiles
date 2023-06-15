@@ -84,6 +84,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
 Plug 'ilyachur/cmake4vim'
 Plug 'markonm/traces.vim' "preview text replacement with :s and friends
+Plug 'solyarisoftware/Highlight.vim' "Highlight text with different colors
 
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
@@ -264,13 +265,19 @@ nnoremap <leader><C-r> :%s/<C-r><C-w>//gc<left><left><left>
 nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
 
 " Ycm shortcuts
-nnoremap <F2> :YcmCompleter GoTo<CR>
+nnoremap <F4> :YcmCompleter GoTo<CR>
 
 " cmake4vim shortcuts
 nnoremap <leader>T :FZFCMakeSelectTarget<CR>
 nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
 nnoremap <leader>B :CMakeBuild<CR>
 nnoremap <leader>R :CMakeRun<CR>
+
+" highlight.vim shortcuts
+vnoremap <F1> :<C-U>HighlightVisual<CR>
+nnoremap <F1> :HighlightYanked<CR>
+nnoremap <F2> :HighlightText 
+nnoremap <F3> :HighlightUndo<CR>
 
 " Maintain visual mode after shifting indentation
 vmap < <gv
