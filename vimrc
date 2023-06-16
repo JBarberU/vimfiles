@@ -89,7 +89,7 @@ Plug 'solyarisoftware/Highlight.vim' "Highlight text with different colors
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
 Plug 'JBarberU/xterm-color-table.vim', { 'on': 'XtermColorTable' }
-Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'mileszs/ack.vim'
 
 " JSON {{{2
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -286,3 +286,7 @@ vmap > >gv
 " Center screen when searching
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" Ack
+nnoremap <leader>A :Ack<Space>
+vnoremap <leader>A y :Ack <C-R>0<CR>
