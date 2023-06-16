@@ -277,9 +277,16 @@ nnoremap <leader>B :CMakeBuild<CR>
 nnoremap <leader>R :CMakeRun<CR>
 
 " highlight.vim shortcuts
+" Highlight.vim
+
+" Highlight whole line based on match
+vnoremap <C-F1> "hy :HighlightText .*<C-r>h.*<CR>
+nnoremap <C-F1> :HighlightText .*<C-r>h.*<CR>
+
+" Highlight matched words
 vnoremap <F1> :<C-U>HighlightVisual<CR>
 nnoremap <F1> :HighlightYanked<CR>
-nnoremap <F2> :HighlightText 
+nnoremap <F2> :HighlightText<Space>
 nnoremap <F3> :HighlightUndo<CR>
 
 " Maintain visual mode after shifting indentation
