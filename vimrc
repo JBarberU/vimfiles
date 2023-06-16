@@ -215,9 +215,9 @@ command! EditVimrc :tabedit $MYVIMRC
 command! EditGVimrc :tabedit $MYGVIMRC
 command! SourceVimrc :source $MYVIMRC
 if has("unix")
-    command! MakeTags !ctags.exe -R .
-else
     command! MakeTags !ctags -R .
+else
+    command! MakeTags !ctags.exe -R .
 endif
 
 command! Cheat execute 'tabedit '.g:vim_dir.'/cheat.md'
