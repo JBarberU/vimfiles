@@ -1,0 +1,33 @@
+snippet translate "translate"
+translate([${1:0}, ${2:0}, ${3:0}])
+endsnippet
+
+snippet rotate "rotate"
+rotate([${1:0}, ${2:0}, ${3:0}])
+endsnippet
+
+snippet scale "scale"
+scale([${1:0}, ${2:0}, ${3:0}])
+endsnippet
+
+snippet trrot "rotate and translate"
+translate([${1:0}, ${2:0}, ${3:0}]) rotate([${4:0}, ${5:0}, ${6:0}])
+endsnippet
+
+snippet li "create a list"
+endsnippet
+
+snippet cube "create a cube"
+cube([${1:0}, ${2:0}, ${3:0}]);
+endsnippet
+
+snippet cylinder "create a cylinder"
+cylinder(d=${1:0}, h=${2:0});
+endsnippet
+
+snippet mod "create a module"
+module ${1}(${2})
+{
+    ${0}
+}
+endsnippet
