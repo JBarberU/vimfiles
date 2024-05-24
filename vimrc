@@ -84,7 +84,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
 Plug 'ilyachur/cmake4vim'
 Plug 'markonm/traces.vim' "preview text replacement with :s and friends
-Plug 'solyarisoftware/Highlight.vim' "Highlight text with different colors
 
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
@@ -100,13 +99,13 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
 
-" C++ {{{2
-Plug 'ycm-core/YouCompleteMe', { 'for': 'cpp' }
+" C/C++ {{{2
+Plug 'ycm-core/YouCompleteMe', { 'for': ['cpp', 'c'] }
 "Plug 'Rip-Rip/clang_complete', { 'for': 'cpp' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
-Plug 'vim-scripts/c.vim', { 'for': 'cpp' }
+Plug 'vim-scripts/c.vim', { 'for': ['cpp', 'c'] }
 " 	# Jump between hpp/cpp
-Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
+Plug 'vim-scripts/a.vim', { 'for': ['cpp', 'c'] }
 
 " GLSL {{{2
 Plug 'beyondmarc/glsl.vim'
@@ -271,26 +270,15 @@ nnoremap <leader><C-r> :%s/<C-r><C-w>//gc<left><left><left>
 nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
 
 " Ycm shortcuts
-nnoremap <F4> :YcmCompleter GoTo<CR>
+nnoremap <F2> :YcmCompleter GoTo<CR>
+nnoremap <F3> :YcmCompleter GoTo
+nnoremap <F4> :YcmCompleter GoToAlternateFile<CR>
 
 " cmake4vim shortcuts
 nnoremap <leader>T :FZFCMakeSelectTarget<CR>
 nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
 nnoremap <leader>B :CMakeBuild<CR>
 nnoremap <leader>R :CMakeRun<CR>
-
-" highlight.vim shortcuts
-" Highlight.vim
-
-" Highlight whole line based on match
-vnoremap <C-F1> "hy :HighlightText .*<C-r>h.*<CR>
-nnoremap <C-F1> :HighlightText .*<C-r>h.*<CR>
-
-" Highlight matched words
-vnoremap <F1> :<C-U>HighlightVisual<CR>
-nnoremap <F1> :HighlightYanked<CR>
-nnoremap <F2> :HighlightText<Space>
-nnoremap <F3> :HighlightUndo<CR>
 
 " Maintain visual mode after shifting indentation
 vmap < <gv
