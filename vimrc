@@ -267,6 +267,9 @@ nnoremap <C-w><C-r> :tabedit $MYVIMRC<CR>
 " Refactor word under cursor
 nnoremap <leader><C-r> :%s/<C-r><C-w>//gc<left><left><left>
 
+" Refactor visual selection
+vnoremap <leader><C-r> "zy:%s/<C-r>z//gc<left><left><left>
+
 " Send current word to hlsearch
 nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
 
@@ -291,4 +294,4 @@ nnoremap N Nzzzv
 
 " Ack
 nnoremap <leader>A :Ack<Space>
-vnoremap <leader>A y :Ack <C-R>0<CR>
+vnoremap <leader>A "zy :Ack <C-R>z
