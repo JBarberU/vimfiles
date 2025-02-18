@@ -84,6 +84,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
 Plug 'ilyachur/cmake4vim'
 Plug 'markonm/traces.vim' "preview text replacement with :s and friends
+Plug 'MattesGroeger/vim-bookmarks'
 
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
@@ -100,7 +101,7 @@ Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
 
 " C/C++ {{{2
-Plug 'ycm-core/YouCompleteMe', { 'for': ['cpp', 'c'] }
+Plug 'ycm-core/YouCompleteMe', { 'for': ['cpp', 'c', 'rust'] }
 "Plug 'Rip-Rip/clang_complete', { 'for': 'cpp' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'vim-scripts/c.vim', { 'for': ['cpp', 'c'] }
