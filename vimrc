@@ -163,6 +163,30 @@ let g:cmake_build_dir_prefix = 'build/'
 let g:cmake_reload_after_save = 1
 let g:make_arguments = '-j'
 
+" Fix shortcut conflict between NERDTree and vim-bookmarks
+" Code found in: github.com/MattesGroeger/vim-bookmarks/issues/38
+let g:bookmark_no_default_key_mappings = 1
+function! BookmarksMapKeys()
+    nmap mm :BookmarkToggle<CR>
+    nmap mi :BookmarkAnnotate<CR>
+    nmap mn :BookmarkNext<CR>
+    nmap mp :BookmarkPrev<CR>
+    nmap ma :BookmarkShowAll<CR>
+    nmap mc :BookmarkClear<CR>
+    nmap mx :BookmarkClearAll<CR>
+endfunction
+function! BookmarksUnmapKeys()
+    unmap mm
+    unmap mi
+    unmap mn
+    unmap mp
+    unmap ma
+    unmap mc
+    unmap mx
+endfunction
+autocmd BufEnter * :call BookmarksMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarksUnmapKeys()
+
 " Theme {{{1
 syntax enable
 set background=dark
