@@ -95,10 +95,10 @@ Plug 'mileszs/ack.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Haskell {{{2
-Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
+Plug 'Shougo/vimproc.vim', { 'for': 'haskell' }
 
 " C/C++ {{{2
 Plug 'ycm-core/YouCompleteMe', { 'for': ['cpp', 'c', 'rust'] }
