@@ -269,11 +269,10 @@ nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <leader><C-n> :NERDTreeClose<CR>
 nnoremap <leader><C-f> :NERDTreeFind<CR>
 
-" Files plugin
-nnoremap <leader>p :Files<CR>
-
-" Search for buffers
-nnoremap <leader><leader>p :b<space>
+" junegunn/fzf.vim plugin
+nnoremap <expr> <leader>p FugitiveHead() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
+nnoremap <expr> <leader>o FugitiveHead() != '' ? ':GFiles?<CR>' : ''
+nnoremap <leader><leader>p :Files<CR>
 
 let g:secret_vimrc = fnameescape(g:vim_dir . '/secret_vimrc')
 if filereadable(g:secret_vimrc)
