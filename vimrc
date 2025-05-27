@@ -137,6 +137,12 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
+" Remove <tab> from ycm_key_list_select_completion and
+" ycm_key_list_select_completion since they conflict with
+" ultisnips
+let g:ycm_key_list_select_completion = ['<Down>', '<C-n>']
+let g:ycm_key_list_previous_completion = ['<Up>', '<C-N>']
+
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
