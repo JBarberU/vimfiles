@@ -194,6 +194,10 @@ endfunction
 autocmd BufEnter * :call BookmarksMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarksUnmapKeys()
 
+" ack
+let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
+let g:ack_autoclose = 1 " automatically close quickfix window
+
 " hard-time
 let g:hardtime_default_on = 1
 
