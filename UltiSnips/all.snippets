@@ -1,0 +1,19 @@
+snippet bash "Inserts bash shebang"
+#!/bin/bash -e
+
+
+endsnippet
+
+snippet python "Inserts python shebang"
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+def main(args):
+    ${0:${VISUAL:pass}}
+
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv[1:]))
+endsnippet

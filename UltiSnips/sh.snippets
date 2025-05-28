@@ -1,0 +1,6 @@
+snippet venv "Loads in virtual env, assuming .env path"
+# init-venv:
+PATH="$PWD/.env/bin:$PATH"
+VIRTUAL_ENV="$PWD/${1:${VISUAL:.env}}"
+
+endsnippet
