@@ -85,6 +85,7 @@ Plug 'junegunn/fzf.vim' "fuzzy finding of files
 Plug 'ilyachur/cmake4vim'
 Plug 'markonm/traces.vim' "preview text replacement with :s and friends
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'takac/vim-hardtime' "force better movement
 
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
@@ -192,6 +193,9 @@ function! BookmarksUnmapKeys()
 endfunction
 autocmd BufEnter * :call BookmarksMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarksUnmapKeys()
+
+" hard-time
+let g:hardtime_default_on = 1
 
 " Theme {{{1
 syntax enable
