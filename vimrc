@@ -82,7 +82,7 @@ Plug 'lambdalisue/suda.vim' "fix for w '!sudo tee %' not working in neovim
 Plug 'edkolev/tmuxline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finding of files
-Plug 'ilyachur/cmake4vim'
+" Plug 'ilyachur/cmake4vim'
 Plug 'markonm/traces.vim' "preview text replacement with :s and friends
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'takac/vim-hardtime' "force better movement
@@ -164,11 +164,11 @@ if has("unix")
 endif
 
 " cmake4vim
-let g:cmake_compile_commands = 1
-let g:cmake_compile_commands_link = './'
-let g:cmake_build_dir_prefix = 'build/'
-let g:cmake_reload_after_save = 1
-let g:make_arguments = '-j'
+" let g:cmake_compile_commands = 1
+" let g:cmake_compile_commands_link = './'
+" let g:cmake_build_dir_prefix = 'build/'
+" let g:cmake_reload_after_save = 1
+" let g:make_arguments = '-j'
 
 " Fix shortcut conflict between NERDTree and vim-bookmarks
 " Code found in: github.com/MattesGroeger/vim-bookmarks/issues/38
@@ -316,10 +316,10 @@ nnoremap <F3> :YcmCompleter GoTo
 nnoremap <F4> :YcmCompleter GoToAlternateFile<CR>
 
 " cmake4vim shortcuts
-nnoremap <leader>T :FZFCMakeSelectTarget<CR>
-nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
-nnoremap <leader>B :CMakeBuild<CR>
-nnoremap <leader>R :CMakeRun<CR>
+" nnoremap <leader>T :FZFCMakeSelectTarget<CR>
+" nnoremap <leader>C :FZFCMakeSelectBuildType<CR>
+" nnoremap <leader>B :CMakeBuild<CR>
+" nnoremap <leader>R :CMakeRun<CR>
 
 " Maintain visual mode after shifting indentation
 vmap < <gv
