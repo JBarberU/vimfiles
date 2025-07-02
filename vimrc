@@ -211,20 +211,23 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 
 " Folds
-hi Folded ctermbg=234 ctermfg=213 guibg=#1F1F1F guifg=#F787FF
-hi FoldColumn ctermbg=0 ctermfg=213 guibg=black guifg=#F787FF
+hi Folded ctermbg=none ctermfg=magenta
+hi FoldColumn ctermbg=none ctermfg=magenta
 
 " Show whitespace characters
 set listchars=tab:\>\ ,eol:$,trail:~
 set list
-hi NonText ctermfg=237 guifg=#3F3F3F
+hi NonText ctermfg=darkgray
 
 " Set all SpecialKey colors to yellow on red (to get trailing whitespace to
 " really pop). We'll fix prepending SpecialKeys with indent_guides later
-hi SpecialKey ctermfg=237 guifg=#3F3F3F
+hi SpecialKey ctermbg=red guibg=red
 
 " Make Visual use the same highlight colors as CursorLine
-" hi! link Visual CursorLine
+hi! Visual ctermfg=white ctermbg=darkmagenta
+
+" Settings for vim-easymotion
+hi link EasyMotionTarget ErrorMsg
 
 " Page Width {{{1
 hi ColorColumn ctermbg=200 guibg=#ff00df
