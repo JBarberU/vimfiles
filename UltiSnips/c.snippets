@@ -1,0 +1,21 @@
+snippet inc "Include statement"
+#include <$1>
+endsnippet
+
+snippet main "Empty main function"
+int main(int argc, char* argv[])
+{
+	$1
+	return EXIT_SUCCESS;
+}
+endsnippet
+
+snippet	inc_guard
+#ifndef ${1:}
+#define $1
+
+$2
+
+#endif // $1
+endsnippet
+
