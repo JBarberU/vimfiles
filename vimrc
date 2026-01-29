@@ -279,6 +279,12 @@ let mapleader=","
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 
+" Custom commands
+
+" Take enumerations and convert them to case labels and return string version
+" (for C code)
+command -range JBConvertEnumToStringCaseLabels <line1>,<line2> norm 0wyeIcase pa: return "ea";lD
+
 " Copy/paste into/from system clipboard
 set clipboard=unnamed,unnamedplus
 
