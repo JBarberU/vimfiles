@@ -320,7 +320,7 @@ nnoremap <silent> * :let @/ = '<C-r><C-w>'<CR>:set hls<CR>
 
 " Ycm shortcuts
 nnoremap <F2> :YcmCompleter GoTo<CR>
-nnoremap <F3> :YcmCompleter GoTo
+nnoremap <F3> :YcmCompleter 
 nnoremap <F4> :YcmCompleter GoToAlternateFile<CR>
 
 " cmake4vim shortcuts
